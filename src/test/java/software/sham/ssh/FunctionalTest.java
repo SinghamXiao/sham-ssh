@@ -1,8 +1,5 @@
 package software.sham.ssh;
 
-import static org.junit.Assert.*;
-import static org.hamcrest.Matchers.*;
-
 import com.jcraft.jsch.ChannelShell;
 import com.jcraft.jsch.JSch;
 import com.jcraft.jsch.JSchException;
@@ -16,6 +13,10 @@ import org.slf4j.LoggerFactory;
 
 import java.io.*;
 import java.util.Properties;
+
+import static org.hamcrest.Matchers.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
 
 public class FunctionalTest {
     private final Logger logger = LoggerFactory.getLogger(getClass());

@@ -25,7 +25,7 @@ public class ResponderDispatcher {
                 logger.debug("Found responder for " + matcher.toString());
                 return responders.get(matcher);
             } else {
-                logger.debug("did not match " +matcher.toString());
+                logger.debug("did not match " + matcher.toString());
             }
         }
         logger.info("No responder found for input " + input);

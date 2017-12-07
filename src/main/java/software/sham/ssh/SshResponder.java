@@ -5,9 +5,6 @@ import org.slf4j.LoggerFactory;
 import software.sham.ssh.actions.Action;
 
 import java.io.IOException;
-import java.io.OutputStream;
-import java.nio.channels.Channels;
-import java.nio.channels.WritableByteChannel;
 import java.util.LinkedList;
 import java.util.List;
 

@@ -11,7 +11,7 @@
 
     <Loggers>
         <Logger name="org.apache.sshd" level="INFO" additivity="false">
-            <AppenderRef ref="ConsoleError" />
+            <AppenderRef ref="ConsoleError"/>
         </Logger>
         <Root level="DEBUG">
             <AppenderRef ref="Console"/>

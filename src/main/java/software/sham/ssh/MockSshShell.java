@@ -1,20 +1,21 @@
 package software.sham.ssh;
 
-import org.apache.commons.io.IOUtils;
 import org.apache.sshd.server.Command;
 import org.apache.sshd.server.Environment;
 import org.apache.sshd.server.ExitCallback;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.*;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.Writer;
 import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
 import java.nio.channels.Channels;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -107,6 +108,7 @@ public class MockSshShell implements Command {
     public class MockShellEventLoop implements Runnable {
         private boolean stopped = false;
         private final MockSshShell shell;
+
         public MockShellEventLoop(MockSshShell shell) {
             this.shell = shell;
         }
@@ -120,7 +122,7 @@ public class MockSshShell implements Command {
 
         @Override
         public void run() {
-            while(! stopped) {
+            while (!stopped) {
                 logger.trace("Polling input...");
                 try {
                     List<String> input = shell.readInput();

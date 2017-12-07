@@ -1,7 +1,5 @@
 package software.sham.sftp;
 
-import static org.junit.Assert.*;
-
 import com.jcraft.jsch.*;
 import org.apache.commons.io.IOUtils;
 import org.junit.After;
@@ -11,6 +9,8 @@ import org.junit.Test;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.util.Properties;
+
+import static org.junit.Assert.assertEquals;
 
 public class FunctionalTest {
     MockSftpServer server;
